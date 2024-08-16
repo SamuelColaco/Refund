@@ -1,0 +1,68 @@
+
+@import url(section.css);
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    :root{
+        --gray-100:#1F2523;
+        --gray-200:#4D5C57;
+        --gray-300:#CDD5D2;
+        --gray-400:#E4ECE9;
+        --gray-500:#F9FBFA;
+
+
+        --white:#FFFFFF;
+
+        --green-100:#1F8459;
+        --green-200:#2CB178;
+
+    }
+
+    body{
+        background-color: var(--gray-400);
+        padding: 2rem;
+    }
+    h1{
+        color: var(--gray-100);
+        font-weight: 680;
+    }
+
+    legend,label{
+        color: var(--gray-200);
+        text-transform: uppercase;
+
+        font-size: 0.625rem;
+        line-height: 0.875rem;
+    }
+    input{
+        border: 3px solid var(--gray-200);
+        background-color: var(--gray-500);
+    }
+    input[type= "button"]{
+        color: var(--white);
+        background-color: var(--green-100);
+    }
+    input[type= "button"]:hover{
+        background-color: var(--green-200);
+        color: var(--white);
+
+
+    }
+    input[type = "button"]:disabled{
+        background-color: #1f845835;
+        color: var(--white);
+        
+    }
+    .p-40{
+        padding: 2.5rem;
+    }
+    section{
+        background-color: var(--gray-500);
+        border-radius: 0.75rem;
+    }
+

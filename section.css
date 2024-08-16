@@ -1,0 +1,48 @@
+
+
+    #list{
+
+        & header{
+            border-bottom: 1px solid var(--gray-400);
+            padding-bottom: 1rem;
+
+            & p{
+                font-weight: 680;
+            }
+        }
+
+    & span{
+        color: var(--gray-200);
+    }
+    & small{
+        color: var(--gray-200);
+    }
+
+    & ul{
+        & li{
+            & span{
+                width: 2.125rem;
+                height: 2.125rem;
+                background-color: var(--gray-400);
+                border-radius: 50%;
+
+                background-image: url(imgs/assets/food.svg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+            }
+
+            & p{
+                color: var(--gray-100);
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
