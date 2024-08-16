@@ -19,26 +19,67 @@
     }
 
     & ul{
+        list-style: none;
         & li{
             & span{
                 width: 2.125rem;
                 height: 2.125rem;
                 background-color: var(--gray-400);
                 border-radius: 50%;
+                position: relative;
+                text-align: center;
 
-                background-image: url(imgs/assets/food.svg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+                & img{
+                    width: 1.125rem;
+                    height: 1.125rem;
+                    position: absolute;
+                    top: 0.4rem;
+                    left: 0.47rem;
+                }
 
             }
 
             & p{
                 color: var(--gray-100);
+                font-weight: 680;
             }
         }
     }
     
+}
+
+.d-flex{
+    display: flex;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.justifi-content-center{
+    justify-content: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.gap-1{
+    gap: 0.25rem;
+}
+.gap-2{
+    gap: 0.5rem;
+}
+.gap-3{
+    gap: 1rem;
+}
+.align-items-baseline{
+    align-items: baseline;
+}
+.fs-5{
+    font-size: 1.25rem;
+}
+.m-0{
+    margin: 0;
 }
 
 

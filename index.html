@@ -33,16 +33,16 @@
             <fieldset class="w-100">
                 <legend>título da despesa</legend>
                 <div class="d-flex flex-column">
-                    <input type="text" class="form-control p-2" id="despesa" placeholder="">
+                    <input type="text" class="form-control p-2" id="despesa"  placeholder="">
                   </div>
             </fieldset>
 
             <fieldset class="d-flex">
                 <div class="d-flex gap-3 ">
                     <div class="d-flex flex-column">
-                        <label for="select" class="form-label">Escolha uma opção</label>
+                        <label for="select" class="form-label">CATEGORIA</label>
                         <select class="form-select" id="select">
-                            <option value="select" selected>Selecione</option>
+                            <option value="select" selected disabled hidden>Selecione</option>
                             <option value="food">Alimentação</option>
                             <option value="transport">Transporte</option>
                             <option value="host">Hospedagem</option>
@@ -67,33 +67,35 @@
                       </div>
                 </div>
             </fieldset>
-            <input type="button" value="Adicionar despesa" class="  w-100 border-0 btn  py-2">
+            <input type="button" value="Adicionar despesa" class="  w-100 border-0 btn  py-2" id="button">
         </form>
     </section>
 
-        <section class="p-40 w-50 " id="list">
+        <section class="p-40 w-50  " id="list">
 
             <header class="d-flex justify-content-between">
 
                 <div class="d-flex align-items-center gap-2">
                     <span class="fs-5">Minhas solicitações</span>
-                    <small>6 despesas</small>
+                    <small id="costs">0 despesas</small>
                 </div>
 
                 <div class="d-flex align-items-center justify-content-center gap-1">
                         <small>R$</small>
                         <div>
-                            <p class="fs-4">1.420,57</p>
+                            <p class="fs-4" id="value-total"></p>
                         </div>
                 </div>
             </header>
 
-            <ul class="py-2">
+            <ul class="py-2  d-flex flex-column">
 
                 <li class="d-flex  align-items-center justify-content-between">
-                        <div class="d-flex  align-items-center gap-2 ">
+                        <div class="d-flex  align-items-center gap-2">
                             <div class="d-flex">
-                                <span></span>
+                                <span class="m-0">
+                                    <img src="imgs/assets/food.svg" alt="Simbolo de garfo e faca verdes">
+                                </span>
                             </div>
                             <div class="d-flex flex-column">
                                 <p class="mb-0">Almoço</p>
@@ -106,7 +108,7 @@
                                 <p class="fs-5">34,78</p>
                             </div>
                             <div>
-                                <img src="imgs/assets/x.svg" alt="Um X vermelho" >
+                                <img src="imgs/assets/x.svg" alt="Um X vermelho" class="cancel" >
                             </div>
                         </div>
                 </li>
@@ -120,6 +122,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
