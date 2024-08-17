@@ -19,8 +19,28 @@
     }
 
     & ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
         list-style: none;
+        margin-top: 1.5rem;
+        padding: 0;
         & li{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & div:nth-child(1){
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                & small{
+                    text-transform: capitalize;
+                }
+            }
+
             & span{
                 width: 2.125rem;
                 height: 2.125rem;
@@ -42,46 +62,43 @@
             & p{
                 color: var(--gray-100);
                 font-weight: 680;
+                margin: 0;
+
+                & small{
+                    font-weight: 500;
+                }
             }
+
+            & p:has(small){
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 0.25rem;
+            }
+
+            & .values{
+                display: flex;
+                align-items: center;
+
+                gap: 1rem;
+            }
+
+            & .cancel{
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+
+                &:hover{
+                    border-radius: 50%;
+                    padding: 0.25rem;
+                    background-color: #4d5c572f;
+                }
+            }
+           
+
         }
     }
     
 }
-
-.d-flex{
-    display: flex;
-}
-.align-items-center{
-    align-items: center;
-}
-.justify-content-between{
-    justify-content: space-between;
-}
-.justifi-content-center{
-    justify-content: center;
-}
-.flex-column {
-    flex-direction: column;
-}
-.gap-1{
-    gap: 0.25rem;
-}
-.gap-2{
-    gap: 0.5rem;
-}
-.gap-3{
-    gap: 1rem;
-}
-.align-items-baseline{
-    align-items: baseline;
-}
-.fs-5{
-    font-size: 1.25rem;
-}
-.m-0{
-    margin: 0;
-}
-
 
 
 
