@@ -26,6 +26,8 @@
     body{
         background-color: var(--gray-400);
         padding: 2rem;
+        
+        margin: auto;
     }
     h1{
         color: var(--gray-100);

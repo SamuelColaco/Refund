@@ -12,8 +12,25 @@ const ul = document.querySelector("ul")
 let despesas = 0
 let total = 0
 
+//validando o input value
+    value.oninput = () => {
+        let valueInput = value.value.replace(/\D/g, "")
 
-// Criando de adicionar a despesa
+        valueInput = Number(valueInput) / 100
+
+        value.value = formatToCurrentMoney(valueInput)
+    }
+
+    function formatToCurrentMoney(money){
+        money = money.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        }) 
+
+        return money
+    }
+
+// Criando  adicionar a  despesa
 button.addEventListener("click", () => {
 
 
@@ -30,7 +47,6 @@ button.addEventListener("click", () => {
     const p1 = document.createElement("p")
     const p2 = document.createElement("p")
     const small1 = document.createElement("small")
-    const small2 = document.createElement("small")
     const imgs = document.createElement("img")
 
     
@@ -39,18 +55,20 @@ button.addEventListener("click", () => {
     const copyImg = cancel.cloneNode(true)
 
 
-    if(title.value !== "" && value.value >= 1){
+    if(title.value !== ""  && value.value !== 0){
 
         p1.textContent = title.value
         p2.textContent = value.value
-        small2.textContent = "R$"
         
-    
-        total+= Number(value.value)
+     
+        total =  Number(total) + Number(value.value.replace("R$", "").replace(",","."))
         total.toFixed(2)
         despesas+=1
         costs.textContent = `${despesas} despesas`
-        valueTotal.textContent = String(total)
+        valueTotal.textContent = String(total.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        }).replace("R$",""))
 
         switch (option.value){
             case "host":
@@ -64,6 +82,10 @@ button.addEventListener("click", () => {
             case "services":
                 imgs.src = "imgs/assets/engine.svg"
                 small1.textContent = "serviços"
+                break
+            case "transport":
+                imgs.src = "imgs/assets/transport.svg"
+                small1.textContent = "transporte"
                 break
             default:
                 imgs.src = "imgs/assets/food.svg"
@@ -80,7 +102,6 @@ button.addEventListener("click", () => {
     
         div5.appendChild(copyImg)
         
-        p2.appendChild(small2)
 
         div6.appendChild(p2)
     
@@ -112,12 +133,16 @@ ul.addEventListener("click", (event) => {
 
          dissapear.style.display = "none"
 
-         const p =  dissapear.querySelector("div.values p").textContent.replace("R$","").trim()
+         const p =  dissapear.querySelector("div.values p").textContent.replace("R$","")
          const subtract = parseFloat(p)
 
          total -= subtract
+
          total.toFixed(2)
-         valueTotal.textContent = `${total}`
+         valueTotal.textContent = `${total.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+         }).replace("R$", "")}`
 
          despesas -= 1
          costs.textContent = `${despesas} despesas`
@@ -125,3 +150,5 @@ ul.addEventListener("click", (event) => {
 })
 
 //Fim
+
+
