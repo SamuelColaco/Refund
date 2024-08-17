@@ -42,7 +42,6 @@ button.addEventListener("click", () => {
     if(title.value !== "" && value.value >= 1){
 
         p1.textContent = title.value
-        small1.textContent = option.value
         p2.textContent = value.value
         small2.textContent = "R$"
         
@@ -54,17 +53,21 @@ button.addEventListener("click", () => {
         valueTotal.textContent = String(total)
 
         switch (option.value){
-            case "hospedagem":
+            case "host":
                 imgs.src = "imgs/assets/host.svg"
+                small1.textContent = "hospedagem"
                 break
-            case "outros":
+            case "others":
                 imgs.src = "imgs/assets/others.svg"
+                small1.textContent = "outros"
                 break
-            case "servicos":
+            case "services":
                 imgs.src = "imgs/assets/engine.svg"
+                small1.textContent = "serviços"
                 break
             default:
                 imgs.src = "imgs/assets/food.svg"
+                small1.textContent = "alimentação"
         }
 
         span1.appendChild(imgs)
