@@ -45,17 +45,17 @@
         border: 3px solid var(--gray-200);
         background-color: var(--gray-500);
     }
-    input[type= "button"]{
+    input[type= "submit"]{
         color: var(--white);
         background-color: var(--green-100);
     }
-    input[type= "button"]:hover{
+    input[type= "submit"]:hover{
         background-color: var(--green-200);
         color: var(--white);
 
 
     }
-    input[type = "button"]:disabled{
+    input[type = "submit"]:disabled{
         background-color: #1f845835;
         color: var(--white);
         
