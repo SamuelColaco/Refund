@@ -41,8 +41,9 @@ let total = 0
             refund_id: option.value,
             refund_name: option.options[option.selectedIndex].text,
             refund_amount: value.value,
-            refund_create_date: new Date().getDay()
+            refund_create_date: new Date().getDate()
         }
+
 
         createRefund(refund)
 
@@ -79,12 +80,14 @@ let total = 0
         
             total =  Number(total) + Number(refund.refund_amount.replace("R$", "").replace(",","."))
             total.toFixed(2)
+
             despesas +=1
             costs.textContent = `${despesas} ${ despesas > 1 ? "despesas" : "despesa" }`
+
             valueTotal.textContent = String(total.toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
-            }).replace("R$",""))
+            }).replace("R$","").replace(".",","))
 
             switch (refund.refund_id){
                 case "host":
@@ -113,26 +116,27 @@ let total = 0
         
             div3.appendChild(span1)
         
-            div4.appendChild(p1)
-            div4.appendChild(small1)
+            div4.append(p1, small1)
         
             div5.appendChild(copyImg)
             
 
             div6.appendChild(p2)
         
-            div1.appendChild(div3)
-            div1.appendChild(div4)
+            div1.append(div3, div4)
         
-            div2.appendChild(div6)
-            div2.appendChild(div5)
+            div2.append(div6, div5)
             div2.classList.add("values")
 
-            li.appendChild(div1)
-            li.appendChild(div2)
+            li.append(div1, div2)
             ul.appendChild(li)
 
+           title.value = ""
+           value.value = ""
+            
+           title.focus()
         }
+
         else{
             alert("Preencha os dados")
         }
@@ -147,15 +151,15 @@ let total = 0
     
 
   }
-//Delegando o evento de apagar para a ul
 
+//Delegando o evento de apagar para a ul
 ul.addEventListener("click", (event) => {
     if(event.target.classList.contains("cancel")){
          const dissapear = event.target.parentNode.parentNode.parentNode
 
-         dissapear.style.display = "none"
+         dissapear.remove()
 
-         const p =  dissapear.querySelector("div.values p").textContent.replace("R$","")
+         const p =  dissapear.querySelector("div.values p").textContent.replace("R$","").replace(",",".")
          const subtract = parseFloat(p)
 
          total -= subtract
@@ -164,7 +168,7 @@ ul.addEventListener("click", (event) => {
          valueTotal.textContent = `${total.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
-         }).replace("R$", "")}`
+         }).replace("R$", "").replace(".",",")}`
 
          despesas -=1
          costs.textContent = `${despesas} ${ despesas > 1 ? "despesas" : "despesa"}`
